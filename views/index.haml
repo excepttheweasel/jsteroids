@@ -1,19 +1,26 @@
 !!! Strict
 %html
   %head
-    %title Learn me some js
+    %title jsteroids
     %script{:src => './raphael-min.js'}
     %script{:src => './jquery-1.4.4.min.js'}
 %style
   :sass
-    body
-      background: black
+    h1, h2, p, a
+      color: #fff
+      font-family: 'Helvetica'
+      margin: 0 auto
+      margin-top: 1em
+      width: 600px
 
     h1
-      font-family: 'Helvetica'
+      font-size: 32px
+
+    h2
       font-size: 14px
-      margin-left: 128px
-      color: #fff
+
+    body
+      background: black
 
     #canvas
       margin: 0 auto
@@ -21,9 +28,17 @@
       height: 600px
       text-align: center
       background: white
+      -moz-border-radius: 4px
+      -webkit-border-radius: 4px
+      
+
 %body
-  %h1 Asteroids in RaphaelJS
+  %h1 jsteroids
+  %h2 Asteroids clone written in Javascript with the Raphaël—JavaScript Library and jQuery.
+  %br
   #canvas
+  %p
+    %a{:href => 'http://github.com/excepttheweasel/jsteroids'} Full source code
 
 :javascript
   var g_width = 800;
