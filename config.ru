@@ -1,7 +1,2 @@
-require 'rubygems'
-require 'sinatra'
-require 'haml'
-
-get '/' do
-  haml :index
-end
+require 'jsteroids'
+run Sinatra::Application
