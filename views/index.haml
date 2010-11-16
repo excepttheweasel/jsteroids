@@ -50,7 +50,7 @@
       %strong D
       Rotate right
     %li
-      %strong Q
+      %strong Space
       Fire missiles
   %br
   #canvas
@@ -273,16 +273,16 @@
   var scoretxt = paper.text(30, 20, 'Score: 0');
 
   // Handle user input
-  $('body').keypress(function(event) {
-    if(event.charCode == 119) {
+  $(document).keydown(function(event) {
+    if(event.which == 87) {
       spaceship.accelerate();
-    } else if(event.charCode == 100) {
+    } else if(event.which == 68) {
       spaceship.turn_left();
-    } else if(event.charCode == 97) {
+    } else if(event.which == 65) {
       spaceship.turn_right();
-    } else if(event.charCode == 115) {
+    } else if(event.which == 83) {
       spaceship.decelerate();
-    } else if(event.charCode == 113) {
+    } else if(event.which == 32) {
       spaceship.fire();
     }
   });
@@ -369,5 +369,5 @@
     scoretxt.attr({text: "Score: " + score});
   }
 
-  // Set the game loop to run
-  setInterval('gameLoop()', 50);
+  // Set the game loop to run at roughly 30fps
+  setInterval('gameLoop()', 33);
