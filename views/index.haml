@@ -50,7 +50,7 @@
       %strong D
       Rotate right
     %li
-      %strong Space
+      %strong Q
       Fire missiles
   %br
   #canvas
@@ -273,16 +273,16 @@
   var scoretxt = paper.text(30, 20, 'Score: 0');
 
   // Handle user input
-  $(document).keydown(function(event) {
-    if(event.which == 87) {
+  $(document).keypress(function(event) {
+    if(event.charCode == 119) {
       spaceship.accelerate();
-    } else if(event.which == 68) {
+    } else if(event.charCode == 100) {
       spaceship.turn_left();
-    } else if(event.which == 65) {
+    } else if(event.charCode == 97) {
       spaceship.turn_right();
-    } else if(event.which == 83) {
+    } else if(event.charCode == 115) {
       spaceship.decelerate();
-    } else if(event.which == 32) {
+    } else if(event.charCode == 113) {
       spaceship.fire();
     }
   });
