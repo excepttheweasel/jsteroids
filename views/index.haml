@@ -396,8 +396,12 @@
       }
     });
 
-    // Update the score
-    scoretxt.attr({text: "Score: " + score});
+    // Update the score, pad with leading zeros
+    var scorestr = '' + score;
+    while(scorestr.length < 8) {
+      scorestr = '0' + scorestr;
+    }
+    scoretxt.attr({text: "Score: " + scorestr});
   }
 
   // Set the game loop to run at roughly 30fps 
