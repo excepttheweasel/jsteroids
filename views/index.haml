@@ -387,12 +387,14 @@
         asteroid.spawn(score * 0.01);
 
         // Keep moving the asteroid if it is too close to the spaceship
-        var sbox = spaceship.gfx.getBBox();
-        var abox = null;
-        do {
-          abox = asteroid.gfx.getBBox();
-          this.gfx.translate(Math.random() * g_width, Math.random() * g_height);
-        } while(collision(abox, sbox, (70 + asteroid.size)));
+        if(spaceship.alive) {
+          var sbox = spaceship.gfx.getBBox();
+          var abox = null;
+          do {
+            this.gfx.translate(Math.random() * g_width, Math.random() * g_height);
+            abox = asteroid.gfx.getBBox();
+          } while(collision(abox, sbox, (250 + asteroid.size)));
+        }
       }
     });
 
