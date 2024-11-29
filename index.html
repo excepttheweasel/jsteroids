@@ -1,415 +1,416 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>jsteroids</title>
-<script src="raphael-min.js"></script>
-<script src="jquery-1.12.4.min.js"></script>
-</head>
-<body>
-<style>
-<style>
-  h1, p, a, ul {
-    color: #fff;
-    font-family: 'Helvetica';
-    margin: 0 auto;
-    margin-top: 1em;
-    width: 600px; }
-  
-  body {
-    background: black; }
-  
-  #canvas {
-    margin: 0 auto;
-    width: 800px;
-    height: 600px;
-    text-align: center;
-    background: white;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px; }
-  
-  ul {
-    list-style: none;
-    padding: 0; }
-    ul li {
-      margin: 0 0.5em;
-      display: inline-block; }
-</style>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>jsteroids</title>
+    <script src="raphael-min.js"></script>
+    <script src="jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+    <style>
+      h1, p, a, ul {
+        color: #fff;
+        font-family: 'Helvetica';
+        margin: 0 auto;
+        margin-top: 1em;
+        width: 600px; }
 
+      body {
+        background: black; overflow: hidden; height: 100%; }
 
-<h1>jsteroids</h1>
-<p>Asteroids clone written in Javascript with the Raphaël—JavaScript Library and jQuery.</p>
-<br>
-<div id="canvas"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="800" height="600"><desc>Created with Raphaël</desc><defs></defs><path fill="none" stroke="#000000" d="M126.89800489131005,421.9014234154145L111.89800489131005,429.4014234154145L111.89800489131005,414.4014234154145L126.89800489131005,421.9014234154145" transform="  "></path><text x="50" y="23.5" text-anchor="middle" style="text-anchor: middle; font: 10px &quot;Arial&quot;;" font="10px &quot;Arial&quot;" stroke="none" fill="#000000"><tspan>Score: 00000000</tspan></text><path fill="none" stroke="#000000" d="M628.1377264534283,168.31078733217748L627.4797264534283,178.41778733217748L631.9147264534282,197.1467873321775L616.7197264534282,201.2417873321775L603.0787264534282,222.63778733217748L585.8167264534281,209.98678733217747L577.4917264534281,193.89878733217748L579.878726453428,177.92078733217747L576.6897264534281,168.31078733217748L556.7477264534281,149.11978733217748L585.7557264534281,150.98778733217748L577.5197264534281,106.60578733217747L603.0787264534281,138.30478733217748L625.138726453428,115.05378733217748L628.878726453428,142.51178733217748L647.528726453428,149.89878733217748L628.1377264534281,168.31078733217748" transform="rotate(647.4119562665488 602.138226453428 164.62178733217746)"></path><path fill="none" stroke="#000000" d="M670.5388255674712,173.82556372146405L682.2448255674713,187.13556372146405L673.4818255674712,197.19656372146406L656.1648255674712,188.44256372146407L650.1108255674712,191.86656372146408L640.1998255674713,197.75156372146407L628.8108255674713,195.12456372146406L624.5918255674712,184.39556372146404L619.5098255674712,173.82556372146405L623.7928255674713,162.92456372146404L624.0158255674712,147.73056372146405L640.7798255674712,151.29756372146406L650.1108255674712,155.83056372146405L665.1998255674713,137.39656372146405L674.6488255674712,149.28756372146404L678.6708255674713,161.99556372146404L670.5388255674713,173.82556372146405" transform="rotate(44.303146990528575 650.8773255674712 167.57406372146406)"></path><path fill="none" stroke="#000000" d="M797.3588831950343,329.1691424303694L807.1038831950343,338.0791424303694L800.2058831950343,343.78014243036944L794.5058831950342,350.68414243036943L785.5938831950342,356.53714243036944L779.0958831950342,344.85814243036947L773.9188831950341,340.84414243036946L756.4988831950342,341.22114243036947L758.8968831950342,329.16914243036945L761.4708831950342,319.17714243036943L764.8428831950341,308.4181424303694L779.9958831950341,315.6531424303694L785.5938831950341,299.22914243036945L794.6138831950341,307.39514243036945L801.8288831950341,312.93414243036943L805.4048831950341,320.96314243036943L797.3588831950341,329.16914243036945" transform="rotate(572.8176434912247 781.8013831950343 327.88314243036945)"></path><path fill="none" stroke="#000000" d="M256.74408636614794,634.0516254172072L264.29908636614795,654.7466254172073L236.14608636614796,655.8616254172073L229.07408636614795,669.6326254172072L214.33608636614795,683.7576254172072L197.57608636614796,674.5136254172072L199.61808636614796,648.7696254172072L168.55908636614797,653.0126254172072L172.67908636614797,634.0516254172072L182.98508636614798,621.0656254172072L177.53908636614798,597.2546254172072L204.361086366148,609.9706254172072L214.33608636614798,614.6816254172072L226.671086366148,604.2716254172072L251.465086366148,596.9226254172072L247.195086366148,620.4406254172072L256.744086366148,634.0516254172072" transform="rotate(608.6437053317347 216.42908636614794 640.3401254172072)"></path><path fill="none" stroke="#000000" d="M801.8487929111255,394.8446254790097L801.5017929111256,398.18762547900974L804.5297929111256,405.94262547900973L801.1517929111255,413.4816254790097L793.4317929111255,415.2106254790097L790.0907929111255,402.9106254790097L778.9807929111255,409.2966254790097L780.0257929111254,400.3976254790097L785.7117929111255,394.8446254790097L778.1207929111255,388.50262547900974L779.0247929111255,380.43762547900974L787.9777929111254,381.6766254790097L793.4317929111254,386.8746254790097L800.3937929111254,378.0376254790097L802.4397929111254,385.8366254790097L809.5017929111254,388.18862547900966L801.8487929111254,394.84462547900966" transform="rotate(123.72936580227667 793.8112929111255 396.6241254790097)"></path><path fill="none" stroke="#000000" d="M327.68269390716637,220.3505558964403L305.0426939071664,233.56755589644033L304.82469390716636,252.0405558964403L291.0066939071664,263.4965558964403L273.13469390716637,241.99655589644033L265.42069390716637,238.97455589644034L248.64269390716638,244.84255589644033L255.65769390716636,227.58955589644034L211.81069390716635,220.35055589644034L254.70269390716635,212.71555589644035L235.43869390716634,182.65455589644034L252.60569390716634,170.78955589644033L273.13469390716637,187.81155589644032L295.5016939071664,166.35155589644032L289.91869390716636,203.56555589644032L307.4366939071664,206.1425558964403L327.68269390716637,220.3505558964403" transform="rotate(1469.3379918117987 269.74669390716633 214.92405589644034)"></path><path fill="none" stroke="#000000" d="M686.0211060749875,91.59717918368347L667.4561060749875,109.25717918368346L655.6781060749875,122.45317918368346L632.8251060749875,110.92017918368346L624.8211060749875,127.59617918368346L600.5351060749874,150.22817918368347L580.2261060749875,136.19217918368346L570.0031060749875,114.30317918368347L580.4281060749875,91.59717918368347L571.8661060749874,69.66217918368346L605.6321060749874,72.40817918368346L602.9051060749874,38.68517918368346L624.8211060749875,60.86417918368346L646.2001060749875,39.98517918368346L654.5951060749875,61.82317918368346L661.5291060749875,76.39217918368345L686.0211060749874,91.59717918368345" transform="rotate(701.9208381634352 628.0121060749875 94.45667918368346)"></path><path fill="none" stroke="#000000" d="M511.4947099574099,267.11348632941497L491.7437099574099,280.817486329415L494.09870995740994,302.55348632941497L472.54470995740996,300.639486329415L458.65870995740994,287.858486329415L449.22870995740993,289.879486329415L438.5847099574099,287.187486329415L441.60070995740995,274.179486329415L422.70870995740995,267.113486329415L414.7747099574099,248.93648632941503L424.12770995740993,232.58248632941502L442.55970995740995,228.24848632941502L458.65870995740994,220.489486329415L471.11270995740995,237.047486329415L478.43370995741,247.338486329415L508.81970995741,246.33648632941498L511.49470995741,267.11348632941497" transform="rotate(781.9308435314329 463.13470995741 261.521486329415)"></path></svg></div>
-<p>
-<a href="http://github.com/excepttheweasel/jsteroids">Full source code</a>
-</p>
+      #canvas {
+        margin: 0 auto;
+        width: 800px;
+        height: 600px;
+        text-align: center;
+        background: white;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px; }
 
-<script>
-  var g_width = 800;
-  var g_height = 600;
-  var paper = Raphael('canvas', g_width, g_height);
-  
-  // Find the middle of a box
-  function middle(box) {
-    return {x: box.x + (box.width / 2), y: box.y + (box.height / 2)};
-  }
-  
-  // Calculate if two boxes are colliding
-  function collision(box1, box2, radius) {
-    var middle1 = middle(box1);
-    var middle2 = middle(box2);
-    var length = Math.sqrt(Math.pow(middle2.x - middle1.x, 2) + Math.pow(middle2.y - middle1.y, 2));
-    return length < radius;
-  }
-  
-  // Generate a rough edges circular style shape (explosion, asteroid etc)
-  // using SVG path notation format
-  function kibble(points, size) {
-    var path = 'M';
-    var firstx, firsty;
-    for(var angle = 0; angle <= Math.PI * 2; angle += (Math.PI / points)) {
-      var radius = (size * 0.3) + Math.random() * (size * 0.7);
-      var x = Math.cos(angle) * radius;
-      var y = Math.sin(angle) * radius;
-      if(angle == 0) {
-        firstx = x;
-        firsty = y;
-        path += x + ' ' + y;
-      } else {
-        path += 'L' + x + ' ' + y;
-      }
-    }
-    path += 'L' + firstx + ' ' + firsty;
-    return paper.path(path);
-  }
-  
-  // Wrap a graphic that has gone off the screen
-  function edgewrap(gfx) {
-    var bbox = gfx.getBBox();
-    if(bbox.x < 0) {
-      gfx.translate(g_width, 0);
-    } else if(bbox.x > g_width) {
-      gfx.translate(-g_width, 0);
-    }
-    if(bbox.y < 0) {
-      gfx.translate(0, g_height);
-    } else if(bbox.y > g_height) {
-      gfx.translate(0, -g_height);
+      ul {
+        list-style: none;
+        padding: 0; }
+      ul li {
+        margin: 0 0.5em;
+        display: inline-block; }
+    </style>
+
+    <h1>jsteroids</h1>
+    <p>Raphaël and jQuery Asteroids clone.</p>
+    <p>Controls: WASD + ␣</p>
+    <br>
+    <div id="canvas"/>
+    <p>
+      <a href="http://github.com/j16r/jsteroids">Source</a>
+    </p>
+
+    <script>
+var g_width = 800;
+var g_height = 600;
+var paper = Raphael('canvas', g_width, g_height);
+
+// Find the middle of a box
+function middle(box) {
+  return {x: box.x + (box.width / 2), y: box.y + (box.height / 2)};
+}
+
+// Calculate if two boxes are colliding
+function collision(box1, box2, radius) {
+  var middle1 = middle(box1);
+  var middle2 = middle(box2);
+  var length = Math.sqrt(Math.pow(middle2.x - middle1.x, 2) + Math.pow(middle2.y - middle1.y, 2));
+  return length < radius;
+}
+
+// Generate a rough edges circular style shape (explosion, asteroid etc)
+// using SVG path notation format
+function kibble(points, size) {
+  var path = 'M';
+  var firstx, firsty;
+  for(var angle = 0; angle <= Math.PI * 2; angle += (Math.PI / points)) {
+    var radius = (size * 0.3) + Math.random() * (size * 0.7);
+    var x = Math.cos(angle) * radius;
+    var y = Math.sin(angle) * radius;
+    if(angle == 0) {
+      firstx = x;
+      firsty = y;
+      path += x + ' ' + y;
+    } else {
+      path += 'L' + x + ' ' + y;
     }
   }
-  
-  // Missiles!
-  var Missile = function() {
+  path += 'L' + firstx + ' ' + firsty;
+  return paper.path(path);
+}
+
+// Wrap a graphic that has gone off the screen
+function edgewrap(gfx) {
+  var bbox = gfx.getBBox();
+  if(bbox.x < 0) {
+    gfx.translate(g_width, 0);
+  } else if(bbox.x > g_width) {
+    gfx.translate(-g_width, 0);
+  }
+  if(bbox.y < 0) {
+    gfx.translate(0, g_height);
+  } else if(bbox.y > g_height) {
+    gfx.translate(0, -g_height);
+  }
+}
+
+// Missiles!
+var Missile = function() {
+  this.alive = false;
+};
+Missile.prototype = {
+  spawn: function(posx, posy, shipxvec, shipyvec, xvec, yvec) {
+    this.gfx = paper.circle(posx, posy, 3);
+    var speed = 15;
+    this.xvec = xvec * speed + shipxvec;
+    this.yvec = yvec * speed + shipyvec;
+    this.alive = true;
+  },
+  die: function() {
     this.alive = false;
-  };
-  Missile.prototype = {
-    spawn: function(posx, posy, shipxvec, shipyvec, xvec, yvec) {
-      this.gfx = paper.circle(posx, posy, 3);
-      var speed = 15;
-      this.xvec = xvec * speed + shipxvec;
-      this.yvec = yvec * speed + shipyvec;
-      this.alive = true;
-    },
-    die: function() {
-      this.alive = false;
-      this.gfx.hide();
-      delete this.gfx;
-    },
-    think: function() {
-      this.gfx.translate(this.xvec, this.yvec);
-  
-      var bbox = this.gfx.getBBox();
-      if(bbox.x < 0 || bbox.x > g_width || bbox.y < 0 || bbox.y > g_height) {
-        this.die();
-        return false;
-      }
-      return true;
-    }
-  };
-  
-  // Explosions
-  var Explosion = function(x, y, size) {
-    this.bitcount = 3 + Math.random() * 7;
-    this.shards = [];
-    for(var index = 0; index < this.bitcount; index++) {
-      var shard = {
-        gfx: kibble(Math.random() * 5, size / 2),
-        angle: Math.random() * Math.PI * 2,
-        speed: Math.random() * 5,
-      }
-      // Positon the shards around the interior of the asteroid
-      var angle = Math.random() * (Math.PI * 2);
-      shard.gfx.translate(x + Math.cos(angle) * (size / 2), y + Math.sin(angle) * (size / 2));
-      this.shards.push(shard);
-    }
-    this.lifetime = (size * 0.6) + Math.random() * (size * 0.4);
-    this.life = this.lifetime;
-  }
-  Explosion.prototype = {
-    think: function() {
-      if(this.life-- > 0) {
-        var color = parseInt(250 * (1 - (this.life / this.lifetime)));
-        $(this.shards).each(function(index, shard) {
-          var x = Math.cos(shard.angle) * shard.speed;
-          var y = Math.sin(shard.angle) * shard.speed;
-          shard.gfx.translate(x, y);
-          shard.gfx.attr({stroke: "rgb(" + color + ", " + color + ", " + color + ")"});
-        });
-        return true;
-      } else {
-        $(this.shards).each(function(index, shard) {
-          shard.gfx.hide();
-        });
-      }
+    this.gfx.hide();
+    delete this.gfx;
+  },
+  think: function() {
+    this.gfx.translate(this.xvec, this.yvec);
+
+    var bbox = this.gfx.getBBox();
+    if(bbox.x < 0 || bbox.x > g_width || bbox.y < 0 || bbox.y > g_height) {
+      this.die();
       return false;
     }
-  };
-  
-  // Asteroids
-  var Asteroid = function() {
-    this.alive = false;
-  };
-  Asteroid.prototype = {
-    spawn: function(speed) {
-      this.size = 20 + Math.random() * 50;
-      this.gfx = kibble(8, this.size);
-      this.gfx.translate(Math.random() * g_width, Math.random() * g_height);
-      this.rotation = Math.random();
-      var angle = Math.random() * Math.PI * 2;
-      // Add a bit of randomness to the asteroid speed
-      speed *= Math.random();
-      this.xvec = Math.cos(angle) * speed;
-      this.yvec = Math.sin(angle) * speed;
-      this.alive = true;
-    },
-    die: function() {
-      this.alive = false;
-      this.gfx.hide();
-      delete this.gfx;
-    },
-    think: function() {
-      this.gfx.translate(this.xvec, this.yvec);
-      this.gfx.rotate(this.rotation);
-      edgewrap(this.gfx);
-    }
+    return true;
   }
-  
-  // Spaceship, with the path for the spaceship knocked up quickly using illustrator
-  var Spaceship = function() {
-    this.gfx = paper.set();
-    this.gfx.push(paper.path('M30 15L0 30L0 0L30 15'));
-    this.gfx.scale(0.5);
+};
+
+// Explosions
+var Explosion = function(x, y, size) {
+  this.bitcount = 3 + Math.random() * 7;
+  this.shards = [];
+  for(var index = 0; index < this.bitcount; index++) {
+    var shard = {
+      gfx: kibble(Math.random() * 5, size / 2),
+      angle: Math.random() * Math.PI * 2,
+      speed: Math.random() * 5,
+    }
+    // Positon the shards around the interior of the asteroid
+    var angle = Math.random() * (Math.PI * 2);
+    shard.gfx.translate(x + Math.cos(angle) * (size / 2), y + Math.sin(angle) * (size / 2));
+    this.shards.push(shard);
+  }
+  this.lifetime = (size * 0.6) + Math.random() * (size * 0.4);
+  this.life = this.lifetime;
+}
+Explosion.prototype = {
+  think: function() {
+    if(this.life-- > 0) {
+      var color = parseInt(250 * (1 - (this.life / this.lifetime)));
+      $(this.shards).each(function(index, shard) {
+        var x = Math.cos(shard.angle) * shard.speed;
+        var y = Math.sin(shard.angle) * shard.speed;
+        shard.gfx.translate(x, y);
+        shard.gfx.attr({stroke: "rgb(" + color + ", " + color + ", " + color + ")"});
+      });
+      return true;
+    } else {
+      $(this.shards).each(function(index, shard) {
+        shard.gfx.hide();
+      });
+    }
+    return false;
+  }
+};
+
+// Asteroids
+var Asteroid = function() {
+  this.alive = false;
+};
+Asteroid.prototype = {
+  spawn: function(speed) {
+    this.size = 20 + Math.random() * 50;
+    this.gfx = kibble(8, this.size);
     this.gfx.translate(Math.random() * g_width, Math.random() * g_height);
-    this.rotation = 0;
-    this.speed = 0;
-    this.accel = 0.1;
-    this.rotation_speed = 0.16;
-    this.max_speed = 10;
+    this.rotation = Math.random();
+    var angle = Math.random() * Math.PI * 2;
+    // Add a bit of randomness to the asteroid speed
+    speed *= Math.random();
+    this.xvec = Math.cos(angle) * speed;
+    this.yvec = Math.sin(angle) * speed;
     this.alive = true;
-    this.momentum = {x: 0, y: 0};
-    this.controls = {accel: false, decel: false, left: false, right: false, fire: false};
-    this.fired = false;
+  },
+  die: function() {
+    this.alive = false;
+    this.gfx.hide();
+    delete this.gfx;
+  },
+  think: function() {
+    this.gfx.translate(this.xvec, this.yvec);
+    this.gfx.rotate(this.rotation);
+    edgewrap(this.gfx);
   }
-  Spaceship.prototype = {
-    setcontrol: function(controls) {
-      this.controls = $.extend({}, this.controls, controls);
-    },
-    turn_left: function() {
-      this.rotate(this.rotation_speed);
-    },
-    turn_right: function() {
-      this.rotate(-this.rotation_speed);
-    },
-    rotate: function(amount) {
-      this.gfx.rotate((amount * 180) / Math.PI);
-      this.rotation += amount
-    },
-    accelerate: function() {
-      this.momentum.x += Math.cos(this.rotation) * this.accel;
-      this.momentum.y += Math.sin(this.rotation) * this.accel;
-    },
-    decelerate: function() {
-      this.momentum.x += Math.cos(this.rotation) * -this.accel;
-      this.momentum.y += Math.sin(this.rotation) * -this.accel;
-    },
-    think: function() {
-      // Handle the controls
-      if(this.controls.accel) {
-        this.accelerate();
+}
+
+// Spaceship, with the path for the spaceship knocked up quickly using illustrator
+var Spaceship = function() {
+  this.gfx = paper.set();
+  this.gfx.push(paper.path('M30 15L0 30L0 0L30 15'));
+  this.gfx.scale(0.5);
+  this.gfx.translate(Math.random() * g_width, Math.random() * g_height);
+  this.rotation = 0;
+  this.speed = 0;
+  this.accel = 0.1;
+  this.rotation_speed = 0.16;
+  this.max_speed = 10;
+  this.alive = true;
+  this.momentum = {x: 0, y: 0};
+  this.controls = {accel: false, decel: false, left: false, right: false, fire: false};
+  this.fired = false;
+}
+Spaceship.prototype = {
+  setcontrol: function(controls) {
+    this.controls = $.extend({}, this.controls, controls);
+  },
+  turn_left: function() {
+    this.rotate(this.rotation_speed);
+  },
+  turn_right: function() {
+    this.rotate(-this.rotation_speed);
+  },
+  rotate: function(amount) {
+    this.gfx.rotate((amount * 180) / Math.PI);
+    this.rotation += amount
+  },
+  accelerate: function() {
+    this.momentum.x += Math.cos(this.rotation) * this.accel;
+    this.momentum.y += Math.sin(this.rotation) * this.accel;
+  },
+  decelerate: function() {
+    this.momentum.x += Math.cos(this.rotation) * -this.accel;
+    this.momentum.y += Math.sin(this.rotation) * -this.accel;
+  },
+  think: function() {
+    // Handle the controls
+    if(this.controls.accel) {
+      this.accelerate();
+    }
+    if(this.controls.decel) {
+      this.decelerate();
+    }
+    if(this.controls.left) {
+      this.turn_left();
+    }
+    if(this.controls.right) {
+      this.turn_right();
+    }
+    if(this.controls.fire) {
+      if(!this.fired) {
+        this.fire();
+        this.fired = true;
       }
-      if(this.controls.decel) {
-        this.decelerate();
-      }
-      if(this.controls.left) {
-        this.turn_left();
-      }
-      if(this.controls.right) {
-        this.turn_right();
-      }
-      if(this.controls.fire) {
-        if(!this.fired) {
-          this.fire();
-          this.fired = true;
+    } else {
+      this.fired = false;
+    }
+
+    this.gfx.translate(this.momentum.x, this.momentum.y);
+    edgewrap(this.gfx);
+  },
+  die: function() {
+    this.gfx.hide();
+    delete this.gfx;
+    this.alive = false;
+  },
+  fire: function() {
+    if(this.alive) {
+      var bbox = this.gfx.getBBox();
+      var pos = middle(bbox);
+
+      // Calculate the vector of the missile relative to the ship
+      var xvec = Math.cos(this.rotation);
+      var yvec = Math.sin(this.rotation);
+
+      // Calculate the position of the nose of the ship
+      var shiplength = bbox.width / 2;
+      pos.x += xvec * shiplength;
+      pos.y += yvec * shiplength;
+
+      // Find a dead missile in the list and respawn it
+      var spaceship = this;
+      $(missiles).each(function(index, missile) {
+        if(!missile.alive) {
+          missile.spawn(pos.x, pos.y, spaceship.momentum.x, spaceship.momentum.y, xvec, yvec);
+          return false;
         }
-      } else {
-        this.fired = false;
-      }
-  
-      this.gfx.translate(this.momentum.x, this.momentum.y);
-      edgewrap(this.gfx);
-    },
-    die: function() {
-      this.gfx.hide();
-      delete this.gfx;
-      this.alive = false;
-    },
-    fire: function() {
-      if(this.alive) {
-        var bbox = this.gfx.getBBox();
-        var pos = middle(bbox);
-  
-        // Calculate the vector of the missile relative to the ship
-        var xvec = Math.cos(this.rotation);
-        var yvec = Math.sin(this.rotation);
-  
-        // Calculate the position of the nose of the ship
-        var shiplength = bbox.width / 2;
-        pos.x += xvec * shiplength;
-        pos.y += yvec * shiplength;
-  
-        // Find a dead missile in the list and respawn it
-        var spaceship = this;
-        $(missiles).each(function(index, missile) {
-          if(!missile.alive) {
-            missile.spawn(pos.x, pos.y, spaceship.momentum.x, spaceship.momentum.y, xvec, yvec);
-            return false;
-          }
-        });
-      }
+      });
     }
   }
-  
-  // World collections
-  var spaceship = new Spaceship();
-  
-  var score = 0;
-  var scoretxt = paper.text(50, 20, 'Score: 00000000');
-  
-  var asteroids = [];
-  for(var index = 0; index < 8; index++) {
-    asteroids.push(new Asteroid());
+}
+
+// World collections
+var spaceship = new Spaceship();
+
+var score = 0;
+var scoretxt = paper.text(50, 20, 'Score: 00000000');
+
+var asteroids = [];
+for(var index = 0; index < 8; index++) {
+  asteroids.push(new Asteroid());
+}
+
+var explosions = [];
+var missiles = [];
+for(var index = 0; index < 30; index++) {
+  missiles.push(new Missile());
+}
+
+// Handle user input
+function setcontrol(event, active) {
+  if(event.which == 87 || event.which == 38) {
+    spaceship.setcontrol({accel: active});
+  } else if(event.which == 83 || event.which == 40) {
+    spaceship.setcontrol({decel: active});
+  } else if(event.which == 68 || event.which == 39) {
+    spaceship.setcontrol({left: active});
+  } else if(event.which == 65 || event.which == 37) {
+    spaceship.setcontrol({right: active});
+  } else if(event.which == 81 || event.which == 32) {
+    spaceship.setcontrol({fire: active});
   }
-  
-  var explosions = [];
-  var missiles = [];
-  for(var index = 0; index < 30; index++) {
-    missiles.push(new Missile());
+}
+$(document).keydown(function(event) {
+  setcontrol(event, true);
+});
+$(document).keyup(function(event) {
+  setcontrol(event, false);
+});
+
+// Game loop
+var gameLoop = function() {
+
+  // Manage the spaceship
+  if(spaceship.alive) {
+    spaceship.think();
   }
-  
-  // Handle user input
-  function setcontrol(event, active) {
-    if(event.which == 87 || event.which == 38) {
-      spaceship.setcontrol({accel: active});
-    } else if(event.which == 83 || event.which == 40) {
-      spaceship.setcontrol({decel: active});
-    } else if(event.which == 68 || event.which == 39) {
-      spaceship.setcontrol({left: active});
-    } else if(event.which == 65 || event.which == 37) {
-      spaceship.setcontrol({right: active});
-    } else if(event.which == 81 || event.which == 32) {
-      spaceship.setcontrol({fire: active});
+
+  // Manage explosions
+  $(explosions).each(function(index, explosion) {
+    if(!explosion.think()) {
+      explosions.splice(index, 1);
+      delete explosion;
     }
-  }
-  $(document).keydown(function(event) {
-    setcontrol(event, true);
   });
-  $(document).keyup(function(event) {
-    setcontrol(event, false);
+
+  // Do thinking for all missiles
+  $(missiles).each(function(index, missile) {
+    if(missile.alive) {
+      missile.think();
+    }
   });
-  
-  // Game loop
-  var gameLoop = function() {
-  
-    // Manage the spaceship
-    if(spaceship.alive) {
-      spaceship.think();
-    }
-  
-    // Manage explosions
-    $(explosions).each(function(index, explosion) {
-      if(!explosion.think()) {
-        explosions.splice(index, 1);
-        delete explosion;
-      }
-    });
-  
-    // Do thinking for all missiles
-    $(missiles).each(function(index, missile) {
-      if(missile.alive) {
-        missile.think();
-      }
-    });
-  
-    // Manage all the asteroids
-    $(asteroids).each(function(index, asteroid) {
-      if(asteroid.alive) {
-        asteroid.think();
-  
-        var abbox = asteroid.gfx.getBBox();
-  
-        // See if any missiles have collided with asteroids
-        $(missiles).each(function(mindex, missile) {
-          if(missile.alive) {
-            var bbox = missile.gfx.getBBox();
-            
-            if(collision(bbox, abbox, asteroid.size * 0.7)) {
-  
-              var pos = middle(abbox);
-              explosions.push(new Explosion(pos.x, pos.y, asteroid.size));
-  
-              asteroid.die();
-              missile.die();
-  
-              // Increase the score
-              score += parseInt(asteroid.size);
-            }
+
+  // Manage all the asteroids
+  $(asteroids).each(function(index, asteroid) {
+    if(asteroid.alive) {
+      asteroid.think();
+
+      var abbox = asteroid.gfx.getBBox();
+
+      // See if any missiles have collided with asteroids
+      $(missiles).each(function(mindex, missile) {
+        if(missile.alive) {
+          var bbox = missile.gfx.getBBox();
+
+          if(collision(bbox, abbox, asteroid.size * 0.7)) {
+
+            var pos = middle(abbox);
+            explosions.push(new Explosion(pos.x, pos.y, asteroid.size));
+
+            asteroid.die();
+            missile.die();
+
+            // Increase the score
+            score += parseInt(asteroid.size);
           }
-        });
-  
-        // See if the spaceship has collided with an asteroid
-        if(spaceship.alive) {
-          var sbox = spaceship.gfx.getBBox();
-          if(collision(sbox, abbox, asteroid.size * 0.7)) {
-            var pos = middle(sbox);
-            explosions.push(new Explosion(pos.x, pos.y, 30));
-            spaceship.die();
-            paper.text(100, 150, 'GAME OVER'); }
         }
-      } else {
-        // Base asteroid speed on the score
-        asteroid.spawn(score * 0.01);
-  
-        // Keep moving the asteroid if it is too close to the spaceship
-        if(spaceship.alive) {
-          var sbox = spaceship.gfx.getBBox();
-          var abox = null;
-          do {
-            this.gfx.translate(Math.random() * g_width, Math.random() * g_height);
-            abox = asteroid.gfx.getBBox();
-          } while(collision(abox, sbox, (250 + asteroid.size)));
-        }
+      });
+
+      // See if the spaceship has collided with an asteroid
+      if(spaceship.alive) {
+        var sbox = spaceship.gfx.getBBox();
+        if(collision(sbox, abbox, asteroid.size * 0.7)) {
+          var pos = middle(sbox);
+          explosions.push(new Explosion(pos.x, pos.y, 30));
+          spaceship.die();
+          paper.text(100, 150, 'GAME OVER'); }
       }
-    });
-  
-    // Update the score, pad with leading zeros
-    var scorestr = '' + score;
-    while(scorestr.length < 8) {
-      scorestr = '0' + scorestr;
+    } else {
+      // Base asteroid speed on the score
+      asteroid.spawn(score * 0.01);
+
+      // Keep moving the asteroid if it is too close to the spaceship
+      if(spaceship.alive) {
+        var sbox = spaceship.gfx.getBBox();
+        var abox = null;
+        do {
+          this.gfx.translate(Math.random() * g_width, Math.random() * g_height);
+          abox = asteroid.gfx.getBBox();
+        } while(collision(abox, sbox, (250 + asteroid.size)));
+      }
     }
-    scoretxt.attr({text: "Score: " + scorestr});
+  });
+
+  // Update the score, pad with leading zeros
+  var scorestr = '' + score;
+  while(scorestr.length < 8) {
+    scorestr = '0' + scorestr;
   }
-  
-  // Set the game loop to run at roughly 30fps 
-  setInterval('gameLoop()', 33);
-</script>
-</body></html>
+  scoretxt.attr({text: "Score: " + scorestr});
+}
+
+// Set the game loop to run at roughly 30fps
+setInterval('gameLoop()', 33);
+    </script>
+  </body>
+</html>
